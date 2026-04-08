@@ -1,0 +1,13 @@
+@SpringBootTest
+@AutoConfigureMockMvc
+public class RewardControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    void testGetRewards() throws Exception {
+        mockMvc.perform(get("/api/rewards"))
+                .andExpect(status().isOk());
+    }
+}
